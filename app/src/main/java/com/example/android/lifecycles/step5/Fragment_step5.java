@@ -65,8 +65,10 @@ public class Fragment_step5 extends Fragment {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
                 // TODO: Set the ViewModel's value when the change comes from the user.
-                Log.d("Step5", "Progress changed!");
-                mSeekBarViewModel.seekbarValue.setValue(progress);
+                if(fromUser){
+                    Log.d("Step5", "Progress changed!");
+                    mSeekBarViewModel.seekbarValue.setValue(progress);
+                }
             }
 
             @Override
